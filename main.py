@@ -20,7 +20,8 @@ dm.disTypesInit(disWidth, disHeight)
 
 clock = pg.time.Clock()
 
-while True:
+running = True
+while running:
     if not menuPage:
         dm.clickMenu(dis, counter, clickeeDonut, menuIcon)
 
@@ -41,7 +42,7 @@ while True:
 
         if event.type == pg.QUIT:
             c.endCounter(clickMultiplier, earningsPerSecond)
-            quit()
+            running = False
 
     
     counter += earningsPerSecond / 60
